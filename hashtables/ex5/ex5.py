@@ -13,8 +13,10 @@ def finder(files, queries):
     finArr = []
 
     for q in queries:
-        if cache.get(q) is not None:
+        # if cache.get(q) is not None:
+        if q in cache:
             finArr.append(cache.get(q))
+            # finArr.append(cache[q])
 
     return [item for sublist in finArr for item in sublist]
 
