@@ -1,10 +1,32 @@
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    # cache = {}
+    # arr = []
+    # for num in a:
+    #      arr.append(abs(num))
+    # print(arr)
+    # for num in arr:
+    #     if num not in cache:
+    #         cache[num] = 1
+    #     else:
+    #         cache[num] += 1 
+    # finalArr = []
 
-    return result
+    # for key, value in cache.items():
+    #     if value >=2:
+    #         finalArr.append(key)
+    # return finalArr
+
+    cache = {}
+    sol = []
+    for val in a:
+        if val * -1 not in cache:
+            cache[val] = val
+        else:
+            sol.append(abs(val))
+    
+    return sol
+
+
 
 
 if __name__ == "__main__":
