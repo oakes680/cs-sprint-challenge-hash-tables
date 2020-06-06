@@ -3,12 +3,24 @@
 
 
 def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    cache = {}
+    for x in files:
+        spl = x.split('/')
+        if spl[len(spl) - 1] not in cache:
+            cache[spl[len(spl) - 1]] = [x]
+        else:
+            cache[spl[len(spl) - 1]].append(x)
+    finArr = []
 
-    return result
+    for q in queries:
+        # if cache.get(q) is not None:
+        if q in cache:
+            finArr.append(cache.get(q))
+            # finArr.append(cache[q])
+
+    return [item for sublist in finArr for item in sublist]
+
+
 
 
 if __name__ == "__main__":
